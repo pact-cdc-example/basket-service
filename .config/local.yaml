@@ -1,0 +1,13 @@
+postgres:
+  username: "pact-cdc"
+  password: "pact-cdc"
+  dbName: "pact-cdc"
+  host: "localhost"
+  port: "5432"
+
+server:
+  port: "9000"
+
+externalURL:
+  productApi: "http://localhost:9001"
+  stockApi: "http://localhost:9002"
