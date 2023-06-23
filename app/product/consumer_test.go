@@ -130,7 +130,6 @@ func (s *ProductConsumerTestSuite) TestGivenGetProductByIDRequestThenItShouldRet
 	err := s.pact.Verify(test)
 
 	s.Nil(err)
-
 }
 
 func (s *ProductConsumerTestSuite) TestGivenGetProductsByIDsReqThenItShouldReturnBodyParserErrorWhenNoProductIDIsSent() {

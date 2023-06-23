@@ -2,12 +2,20 @@ package config
 
 import (
 	"fmt"
+	"os"
+	"strings"
 
 	"github.com/spf13/viper"
 )
 
 func New() Manager {
-	viper.AddConfigPath(path)
+	directory, _ := os.Getwd()
+	configPath := fmt.Sprintf(".%s", path)
+	if strings.HasSuffix(directory, "pact-cdc-test") {
+		configPath = fmt.Sprintf("./basket-service%s", path)
+	}
+
+	viper.AddConfigPath(configPath)
 	viper.SetConfigName(local)
 	viper.SetConfigType(yaml)
 
@@ -25,7 +33,7 @@ func New() Manager {
 }
 
 const (
-	path  = "./basket-service/.config"
+	path  = "/.config"
 	local = "local"
 	yaml  = "yaml"
 )

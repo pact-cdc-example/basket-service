@@ -1,0 +1,175 @@
+{
+  "consumer": {
+    "name": "BasketService"
+  },
+  "provider": {
+    "name": "StockService"
+  },
+  "interactions": [
+    {
+      "description": "A request for inquiry stock information about a product",
+      "providerState": "i get false",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/stocks/availability",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "product_id": "5ca97b19-b8c2-482b-9b7f-9a361d33b4d4",
+          "quantity": 5
+        },
+        "matchingRules": {
+          "$.body.product_id": {
+            "match": "type"
+          },
+          "$.body.quantity": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "is_available": false
+        }
+      }
+    },
+    {
+      "description": "A request for inquiry stock information about a product",
+      "providerState": "i get no stock information found error if no stock information found for given product id",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/stocks/availability",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "product_id": "4e95ff20-216d-49bc-a6e6-8024613835bc",
+          "quantity": 54
+        },
+        "matchingRules": {
+          "$.body.product_id": {
+            "match": "type"
+          },
+          "$.body.quantity": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 30001,
+          "message": "No stock information found for given product id."
+        }
+      }
+    },
+    {
+      "description": "A request for inquiry stock information about a product",
+      "providerState": "i get product id must be given error if product id is not given",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/stocks/availability",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "quantity": 86
+        },
+        "matchingRules": {
+          "$.body.quantity": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 30000,
+          "message": "Product id must be given to stock inquiry."
+        }
+      }
+    },
+    {
+      "description": "A request for inquiry stock information about a product",
+      "providerState": "i get quantity must be given error if quantity is not given",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/stocks/availability",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "product_id": "2202465c-f83c-44c7-bc38-8553bcc87e0f"
+        },
+        "matchingRules": {
+          "$.body.product_id": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 30002,
+          "message": "Quantity must be given to stock inquiry."
+        }
+      }
+    },
+    {
+      "description": "A request for inquiry stock information about a product",
+      "providerState": "i get true",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/stocks/availability",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "product_id": "1ce2425e-aa10-459d-ac40-be01c85e427c",
+          "quantity": 40
+        },
+        "matchingRules": {
+          "$.body.product_id": {
+            "match": "type"
+          },
+          "$.body.quantity": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "is_available": true
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

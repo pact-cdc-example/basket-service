@@ -49,18 +49,107 @@ func (s *StockConsumerTestSuite) TearDownSuite() {
 	defer s.pact.Teardown()
 }
 
-func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnNoStockInfoFoundErrorIfGivenProductIDNotHasStockInfo() {
+func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnProductIDMustBeGivenErrWhenProductIDIsNotGiven() {
+	quantity := int(gofakeit.Uint8())
+
+	s.pact.
+		AddInteraction().
+		Given("i get product id must be given error if product id is not given").
+		UponReceiving("A request for inquiry stock information about a product").
+		WithRequest(dsl.Request{
+			Method: http.MethodPost,
+			Path:   dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
+			},
+			Body: dsl.StructMatcher{
+				"quantity": dsl.Like(quantity),
+			},
+		}).
+		WillRespondWith(dsl.Response{
+			Status: http.StatusBadRequest,
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+			},
+			Body: dsl.StructMatcher{
+				"code":    30000,
+				"message": "Product id must be given to stock inquiry.",
+			},
+		})
+
+	var test = func() error {
+		_, err := s.client.IsProductAvailableInStock(context.Background(), stock.IsProductAvailableInStockRequest{
+			ProductID: nil,
+			Quantity:  &quantity,
+		})
+
+		return err
+	}
+
+	err := s.pact.Verify(test)
+
+	s.Equal(err, cerr.Bag{Code: 30000, Message: "Product id must be given to stock inquiry."})
+}
+
+func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnQuantityMustBeGivenErrWhenQuantityIsNotGiven() {
+	productID := gofakeit.UUID()
+
+	s.pact.
+		AddInteraction().
+		Given("i get quantity must be given error if quantity is not given").
+		UponReceiving("A request for inquiry stock information about a product").
+		WithRequest(dsl.Request{
+			Method: http.MethodPost,
+			Path:   dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
+			},
+			Body: dsl.StructMatcher{
+				"product_id": dsl.Like(productID),
+			},
+		}).
+		WillRespondWith(dsl.Response{
+			Status: http.StatusBadRequest,
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+			},
+			Body: dsl.StructMatcher{
+				"code":    30002,
+				"message": "Quantity must be given to stock inquiry.",
+			},
+		})
+
+	var test = func() error {
+		_, err := s.client.IsProductAvailableInStock(context.Background(), stock.IsProductAvailableInStockRequest{
+			ProductID: &productID,
+			Quantity:  nil,
+		})
+
+		return err
+	}
+
+	err := s.pact.Verify(test)
+
+	s.Equal(err, cerr.Bag{Code: 30002, Message: "Quantity must be given to stock inquiry."})
+}
+
+func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnNoStockInfoFoundErrorWhenGivenProductIDNotHasStockInfo() {
 	givenProductID := gofakeit.UUID()
-	quantity := int(gofakeit.Int32())
+	quantity := int(gofakeit.Uint8())
 
 	s.pact.
 		AddInteraction().
 		Given("i get no stock information found error if no stock information found for given product id").
 		UponReceiving("A request for inquiry stock information about a product").
 		WithRequest(dsl.Request{
-			Method:  http.MethodGet,
-			Path:    dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
-			Headers: map[string]dsl.Matcher{},
+			Method: http.MethodPost,
+			Path:   dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
+			},
 			Body: dsl.StructMatcher{
 				"product_id": dsl.Like(givenProductID),
 				"quantity":   dsl.Like(quantity),
@@ -70,7 +159,6 @@ func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldR
 			Status: http.StatusBadRequest,
 			Headers: map[string]dsl.Matcher{
 				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
-				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
 			},
 			Body: dsl.StructMatcher{
 				"code":    30001,
@@ -94,26 +182,28 @@ func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldR
 
 func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnFalseIfGivenProductIDNotInStockInGivenQuantity() {
 	givenProductID := gofakeit.UUID()
-	quantity := int(gofakeit.Int32())
+	quantity := int(gofakeit.Uint8())
 
 	s.pact.
 		AddInteraction().
 		Given("i get false").
 		UponReceiving("A request for inquiry stock information about a product").
 		WithRequest(dsl.Request{
-			Method:  http.MethodGet,
-			Path:    dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
-			Headers: map[string]dsl.Matcher{},
+			Method: http.MethodPost,
+			Path:   dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
+			},
 			Body: dsl.StructMatcher{
 				"product_id": dsl.Like(givenProductID),
 				"quantity":   dsl.Like(quantity),
 			},
 		}).
 		WillRespondWith(dsl.Response{
-			Status: http.StatusBadRequest,
+			Status: http.StatusOK,
 			Headers: map[string]dsl.Matcher{
 				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
-				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
 			},
 			Body: dsl.StructMatcher{
 				"is_available": false,
@@ -135,26 +225,28 @@ func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldR
 
 func (s *StockConsumerTestSuite) TestGivenStockInquiryForProductReqThenItShouldReturnTrueIfGivenProductIDAvailableInStockInGivenQuantity() {
 	givenProductID := gofakeit.UUID()
-	quantity := int(gofakeit.Int32())
+	quantity := int(gofakeit.Uint8())
 
 	s.pact.
 		AddInteraction().
 		Given("i get true").
 		UponReceiving("A request for inquiry stock information about a product").
 		WithRequest(dsl.Request{
-			Method:  http.MethodGet,
-			Path:    dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
-			Headers: map[string]dsl.Matcher{},
+			Method: http.MethodPost,
+			Path:   dsl.String(fmt.Sprintf(isProductAvailableInStockPath)),
+			Headers: map[string]dsl.Matcher{
+				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
+				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
+			},
 			Body: dsl.StructMatcher{
 				"product_id": dsl.Like(givenProductID),
 				"quantity":   dsl.Like(quantity),
 			},
 		}).
 		WillRespondWith(dsl.Response{
-			Status: http.StatusBadRequest,
+			Status: http.StatusOK,
 			Headers: map[string]dsl.Matcher{
 				fiber.HeaderContentType: dsl.String(fiber.MIMEApplicationJSON),
-				fiber.HeaderAccept:      dsl.String(fiber.MIMEApplicationJSON),
 			},
 			Body: dsl.StructMatcher{
 				"is_available": true,

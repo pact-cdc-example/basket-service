@@ -42,7 +42,7 @@ func NewClient(opts *NewClientOpts) Client {
 func (c *client) IsProductAvailableInStock(ctx context.Context, req IsProductAvailableInStockRequest) (bool, error) {
 	url := fmt.Sprintf(isProductAvailableInStockPath, c.baseURL)
 
-	body, err := c.httpClient.GetWithBody(ctx, url, c.headers, req)
+	body, err := c.httpClient.Post(ctx, url, c.headers, req)
 	if err != nil {
 		return false, err
 	}

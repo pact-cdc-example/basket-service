@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -69,7 +68,7 @@ func (c *client) GetWithBody(
 	if err != nil {
 		return nil, err
 	}
-	fmt.Printf("Body Format: %s\n", string(bodyBytes))
+
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, bytes.NewReader(bodyBytes))
 	if err != nil {
 		return nil, err

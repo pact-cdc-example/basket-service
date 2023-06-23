@@ -2,14 +2,15 @@
 
 set -x
 
-VERSION=0.0.1 #like 1.0.0
+VERSION=0.0.7 #like 1.0.0
 BROKER_BASE_URL=http://localhost
 TAG=dev
 BRANCH=basket-service-pact
-BASKET_SERVICE_PRODUCT_SERVICE_PACT=./app/product/pacts/basketservice-productservice.json
+PROVIDER_NAME=stock
+PACT_PATH=./app/${PROVIDER_NAME}/pacts/basketservice-${PROVIDER_NAME}service.json
 
 pact-broker publish \
-${BASKET_SERVICE_PRODUCT_SERVICE_PACT} \
+${PACT_PATH} \
 --consumer-app-version=${VERSION} \
 --broker-base-url=${BROKER_BASE_URL} \
 --tag=${TAG} \
