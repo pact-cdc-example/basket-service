@@ -44,7 +44,7 @@ func (pr *postgresRepository) CreateBasket(
 	).Err()
 
 	if err != nil {
-		pr.logger.Error("could not create basket :%v", err)
+		pr.logger.Errorf("could not create basket :%v", err)
 		return nil, err
 	}
 
@@ -66,7 +66,7 @@ func (pr *postgresRepository) getBasketByID(
 		&bask.CreatedAt,
 		&bask.UpdatedAt,
 	); err != nil {
-		pr.logger.Error("could not get basket by id: %v", err)
+		pr.logger.Errorf("could not get basket by id: %v", err)
 		return nil, err
 	}
 
@@ -75,7 +75,7 @@ func (pr *postgresRepository) getBasketByID(
 		WHERE basket_id = $1`, basketID)
 
 	if err != nil {
-		pr.logger.Error("could not get basket products: %v", err)
+		pr.logger.Errorf("could not get basket products: %v", err)
 		return nil, err
 	}
 
@@ -86,7 +86,7 @@ func (pr *postgresRepository) getBasketByID(
 			&product.ID,
 			&product.Quantity,
 		); err != nil {
-			pr.logger.Error("could not scan basket product: %v", err)
+			pr.logger.Errorf("could not scan basket product: %v", err)
 			return nil, err
 		}
 		products = append(products, product)
@@ -106,7 +106,7 @@ func (pr *postgresRepository) AddProductToBasket(
 	).Err()
 
 	if err != nil {
-		pr.logger.Error("could not add product to basket: %v", err)
+		pr.logger.Errorf("could not add product to basket: %v", err)
 		return nil, err
 	}
 

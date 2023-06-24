@@ -1,3 +1,5 @@
+//go:build consumer
+
 package product_test
 
 import (

@@ -1,0 +1,144 @@
+{
+  "consumer": {
+    "name": "BasketService"
+  },
+  "provider": {
+    "name": "ProductService"
+  },
+  "interactions": [
+    {
+      "description": "A request for product with a non exist product id",
+      "providerState": "i get product not found error when the product with given id does not exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b"
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 20001,
+          "message": "Product not found."
+        }
+      }
+    },
+    {
+      "description": "A request for product with a exist product id",
+      "providerState": "i get product with given id",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": "eius",
+          "color": "Ivory",
+          "created_at": "1986-09-01T01:43:52.032981716Z",
+          "id": "32abdb23-4e19-4722-a3f7-2eb52dca72a5",
+          "image_url": "https://picsum.photos/200/100",
+          "name": "Milton Hansen",
+          "price": 89.43,
+          "type": "est",
+          "updated_at": "1932-09-18T09:59:38.826831112Z"
+        },
+        "matchingRules": {
+          "$.body.code": {
+            "match": "type"
+          },
+          "$.body.color": {
+            "match": "type"
+          },
+          "$.body.created_at": {
+            "match": "type"
+          },
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.image_url": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.price": {
+            "match": "type"
+          },
+          "$.body.type": {
+            "match": "type"
+          },
+          "$.body.updated_at": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "A request for get products",
+      "providerState": "i get body parser error when no product id is given",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/products/bulk",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 10001,
+          "message": "could not parse request body."
+        }
+      }
+    },
+    {
+      "description": "A request for get products contains at least one not exist product id",
+      "providerState": "i get product not found error when the one of product with given id does not exists",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/products/bulk",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "ids": [
+            "73cb72b6-62e2-44c3-9462-fca8663ba3c8"
+          ]
+        },
+        "matchingRules": {
+          "$.body.ids": {
+            "min": 1
+          },
+          "$.body.ids[*].*": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 20003,
+          "message": "At least one of given product ids does not exist."
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

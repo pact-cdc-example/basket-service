@@ -1,3 +1,5 @@
+//go:build consumer
+
 package stock_test
 
 import (

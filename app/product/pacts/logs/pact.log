@@ -1,0 +1,280 @@
+I, [2023-06-24T14:52:57.563750 #63374]  INFO -- : Registered expected interaction GET /api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b
+D, [2023-06-24T14:52:57.563855 #63374] DEBUG -- : {
+  "description": "A request for product with a non exist product id",
+  "providerState": "i get product not found error when the product with given id does not exists",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": 20001,
+      "message": "Product not found."
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-24T14:52:57.564998 #63374]  INFO -- : Received request GET /api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b
+D, [2023-06-24T14:52:57.565065 #63374] DEBUG -- : {
+  "path": "/api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Host": "localhost:50986",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-24T14:52:57.565135 #63374]  INFO -- : Found matching response for GET /api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b
+D, [2023-06-24T14:52:57.565166 #63374] DEBUG -- : {
+  "status": 400,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": 20001,
+    "message": "Product not found."
+  }
+}
+I, [2023-06-24T14:52:57.565548 #63374]  INFO -- : Cleared interactions
+I, [2023-06-24T14:52:57.566843 #63374]  INFO -- : Registered expected interaction GET /api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5
+D, [2023-06-24T14:52:57.566929 #63374] DEBUG -- : {
+  "description": "A request for product with a exist product id",
+  "providerState": "i get product with given id",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "eius"
+      },
+      "color": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Ivory"
+      },
+      "created_at": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "1986-09-01T01:43:52.032981716Z"
+      },
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "32abdb23-4e19-4722-a3f7-2eb52dca72a5"
+      },
+      "image_url": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "https://picsum.photos/200/100"
+      },
+      "name": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Milton Hansen"
+      },
+      "price": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 89.43
+      },
+      "type": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "est"
+      },
+      "updated_at": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "1932-09-18T09:59:38.826831112Z"
+      }
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-24T14:52:57.567387 #63374]  INFO -- : Received request GET /api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5
+D, [2023-06-24T14:52:57.567435 #63374] DEBUG -- : {
+  "path": "/api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Host": "localhost:50986",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-24T14:52:57.567496 #63374]  INFO -- : Found matching response for GET /api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5
+D, [2023-06-24T14:52:57.567567 #63374] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "eius"
+    },
+    "color": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "Ivory"
+    },
+    "created_at": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "1986-09-01T01:43:52.032981716Z"
+    },
+    "id": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "32abdb23-4e19-4722-a3f7-2eb52dca72a5"
+    },
+    "image_url": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "https://picsum.photos/200/100"
+    },
+    "name": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "Milton Hansen"
+    },
+    "price": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 89.43
+    },
+    "type": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "est"
+    },
+    "updated_at": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "1932-09-18T09:59:38.826831112Z"
+    }
+  }
+}
+I, [2023-06-24T14:52:57.567910 #63374]  INFO -- : Verifying - interactions matched
+I, [2023-06-24T14:52:57.568270 #63374]  INFO -- : Cleared interactions
+I, [2023-06-24T14:52:57.569264 #63374]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.569308 #63374] DEBUG -- : {
+  "description": "A request for get products",
+  "providerState": "i get body parser error when no product id is given",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/products/bulk",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": 10001,
+      "message": "could not parse request body."
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-24T14:52:57.569708 #63374]  INFO -- : Received request POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.569766 #63374] DEBUG -- : {
+  "path": "/api/v1/products/bulk",
+  "query": "",
+  "method": "post",
+  "body": {
+    "ids": null
+  },
+  "headers": {
+    "Content-Length": "12",
+    "Content-Type": "application/json",
+    "Host": "localhost:50986",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-24T14:52:57.569814 #63374]  INFO -- : Found matching response for POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.569838 #63374] DEBUG -- : {
+  "status": 400,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": 10001,
+    "message": "could not parse request body."
+  }
+}
+I, [2023-06-24T14:52:57.570142 #63374]  INFO -- : Cleared interactions
+I, [2023-06-24T14:52:57.572438 #63374]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.572500 #63374] DEBUG -- : {
+  "description": "A request for get products contains at least one not exist product id",
+  "providerState": "i get product not found error when the one of product with given id does not exists",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/products/bulk",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "ids": {
+        "json_class": "Pact::ArrayLike",
+        "contents": "73cb72b6-62e2-44c3-9462-fca8663ba3c8",
+        "min": 1
+      }
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": 20003,
+      "message": "At least one of given product ids does not exist."
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-24T14:52:57.572900 #63374]  INFO -- : Received request POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.572965 #63374] DEBUG -- : {
+  "path": "/api/v1/products/bulk",
+  "query": "",
+  "method": "post",
+  "body": {
+    "ids": [
+      "73cb72b6-62e2-44c3-9462-fca8663ba3c8",
+      "ec9dc011-5d3f-4269-aa59-2be24f92b81c",
+      "d5f50256-3e4b-40a7-8976-822f2584e2de"
+    ]
+  },
+  "headers": {
+    "Content-Length": "126",
+    "Content-Type": "application/json",
+    "Host": "localhost:50986",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-24T14:52:57.573046 #63374]  INFO -- : Found matching response for POST /api/v1/products/bulk
+D, [2023-06-24T14:52:57.573079 #63374] DEBUG -- : {
+  "status": 400,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": 20003,
+    "message": "At least one of given product ids does not exist."
+  }
+}
+I, [2023-06-24T14:52:57.573368 #63374]  INFO -- : Cleared interactions

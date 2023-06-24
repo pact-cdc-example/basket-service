@@ -51,7 +51,7 @@ func (s *service) CreateBasket(
 		UserID: req.UserID,
 	})
 	if err != nil && !errors.Is(err, sql.ErrNoRows) {
-		s.logger.Error("could not create basket: %v", err)
+		s.logger.Errorf("could not create basket: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -62,7 +62,7 @@ func (s *service) AddProductToBasket(
 	ctx context.Context, req AddProductToBasketRequest) (*GetBasketResponse, error) {
 	basket, err := s.repo.GetBasketByID(ctx, req.BasketID)
 	if err != nil || basket == nil || basket.UserID != req.UserID {
-		s.logger.WithField("basket_id", req.BasketID).Error("could not found basket: %v", err)
+		s.logger.WithField("basket_id", req.BasketID).Errorf("could not found basket: %v", err)
 		return nil, cerr.Bag{Code: BasketNotFoundErrCode, Message: "basket not found"}
 	}
 
@@ -86,7 +86,7 @@ func (s *service) AddProductToBasket(
 		BasketID: basket.ID,
 	})
 	if err != nil {
-		s.logger.WithField("basket_id", req.BasketID).Error("could not add product to basket: %v", err)
+		s.logger.WithField("basket_id", req.BasketID).Errorf("could not add product to basket: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -96,7 +96,7 @@ func (s *service) AddProductToBasket(
 	})
 	if err != nil {
 		s.logger.WithField("product_id", req.ProductID).WithField("quantity", req.Quantity).
-			WithField("basket_id", req.BasketID).Error("could not reserve stock: %v", err)
+			WithField("basket_id", req.BasketID).Errorf("could not reserve stock: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -114,7 +114,7 @@ func (s *service) GetBasketByID(
 	ctx context.Context, basketID string) (*GetBasketResponse, error) {
 	basket, err := s.repo.GetBasketByID(ctx, basketID)
 	if err != nil {
-		s.logger.WithField("basket_id", basketID).Error("could not found basket: %v", err)
+		s.logger.WithField("basket_id", basketID).Errorf("could not found basket: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -132,7 +132,7 @@ func (s *service) AddBulkProductToBasket(
 	ctx context.Context, req AddBulkProductToBasketRequest) (*GetBasketResponse, error) {
 	basket, err := s.repo.GetBasketByID(ctx, req.BasketID)
 	if err != nil || basket == nil || basket.UserID != req.UserID {
-		s.logger.WithField("basket_id", req.BasketID).Error("could not found basket: %v", err)
+		s.logger.WithField("basket_id", req.BasketID).Errorf("could not found basket: %v", err)
 		return nil, cerr.Bag{Code: BasketNotFoundErrCode, Message: "basket not found"}
 	}
 
@@ -144,7 +144,7 @@ func (s *service) AddBulkProductToBasket(
 		})
 		if err != nil {
 			s.logger.WithField("basket_id", req.BasketID).
-				WithField("product_id", prod.ID).Error("could not add product to basket: %v", err)
+				WithField("product_id", prod.ID).Errorf("could not add product to basket: %v", err)
 			return nil, cerr.Processing()
 		}
 	}
@@ -155,7 +155,7 @@ func (s *service) AddBulkProductToBasket(
 func (s *service) getProductByID(ctx context.Context, productID string) (*product.Product, error) {
 	prod, err := s.productClient.GetProductByID(ctx, productID)
 	if err != nil {
-		s.logger.WithField("product_id", productID).Error("could not get product from product service: %v", err)
+		s.logger.WithField("product_id", productID).Errorf("could not get product from product service: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -167,7 +167,7 @@ func (s *service) getProductsByIDs(ctx context.Context, productIDs []string) ([]
 		IDs: productIDs,
 	})
 	if err != nil {
-		s.logger.Error("could not get products from product api: %v", err)
+		s.logger.Errorf("could not get products from product api: %v", err)
 		return nil, cerr.Processing()
 	}
 
@@ -181,7 +181,7 @@ func (s *service) isProductAvailableInStockInDesiredQuantity(
 		Quantity:  &quantity,
 	})
 	if err != nil {
-		s.logger.WithField("product_id", productID).Error("could not check product availability in stock: %v", err)
+		s.logger.WithField("product_id", productID).Errorf("could not check product availability in stock: %v", err)
 		return false, cerr.Processing()
 	}
 
