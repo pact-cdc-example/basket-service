@@ -9,9 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: eneskzlcn/pact-with-go:go-1.18
-    ports:
-      - 80
+    container:
+      image: eneskzlcn/pact-with-go:go-1.18
+      ports:
+        - 80
     env:
       GH_ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
