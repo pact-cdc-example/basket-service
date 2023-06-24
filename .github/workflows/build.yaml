@@ -8,21 +8,16 @@ on:
 
 jobs:
   build:
-    name: CI
     runs-on: ubuntu-latest
+    container: eneskzlcn/pact-with-go:go-1.18
+    ports:
+      - 80
     env:
       GH_ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.18
-
-      - run: git config --global url.https://$GH_ACCESS_TOKEN@github.com/.insteadOf https://github.com/
 
       - name: Build
         run: go build -v ./...
