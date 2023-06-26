@@ -27,4 +27,4 @@ jobs:
         run: sudo gem install pact
 
       - name: Test Consumer
-        run: go clean -testcache && go test -tags=consumer ./app/...
+        run: go clean -testcache && go test -tags=consumer ./app/... -v

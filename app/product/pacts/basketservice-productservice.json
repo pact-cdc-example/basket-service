@@ -11,7 +11,7 @@
       "providerState": "i get product not found error when the product with given id does not exists",
       "request": {
         "method": "GET",
-        "path": "/api/v1/products/43c85810-b47e-4272-8b6c-7555e825358b"
+        "path": "/api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b"
       },
       "response": {
         "status": 400,
@@ -29,7 +29,7 @@
       "providerState": "i get product with given id",
       "request": {
         "method": "GET",
-        "path": "/api/v1/products/32abdb23-4e19-4722-a3f7-2eb52dca72a5"
+        "path": "/api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee"
       },
       "response": {
         "status": 200,
@@ -37,15 +37,15 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "code": "eius",
-          "color": "Ivory",
-          "created_at": "1986-09-01T01:43:52.032981716Z",
-          "id": "32abdb23-4e19-4722-a3f7-2eb52dca72a5",
+          "code": "autem",
+          "color": "PaleGreen",
+          "created_at": "2018-12-10T13:34:04.738853725Z",
+          "id": "2555bc04-7a49-44f0-9106-93c5099f12ee",
           "image_url": "https://picsum.photos/200/100",
-          "name": "Milton Hansen",
-          "price": 89.43,
-          "type": "est",
-          "updated_at": "1932-09-18T09:59:38.826831112Z"
+          "name": "Hipolito Predovic",
+          "price": 94.59,
+          "type": "eligendi",
+          "updated_at": "1906-03-05T03:58:15.934611693Z"
         },
         "matchingRules": {
           "$.body.code": {
@@ -112,7 +112,7 @@
         },
         "body": {
           "ids": [
-            "73cb72b6-62e2-44c3-9462-fca8663ba3c8"
+            "90fd06e4-8e39-4219-857f-d463c6ba8795"
           ]
         },
         "matchingRules": {

@@ -17,8 +17,8 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "product_id": "d4c06621-c7cd-4799-a8c1-e9aa58d9e7f9",
-          "quantity": 26
+          "product_id": "4550d706-1c7b-461f-9d02-d580352e3048",
+          "quantity": 107
         },
         "matchingRules": {
           "$.body.product_id": {
@@ -50,8 +50,8 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "product_id": "cbecbb81-7c99-4e7e-b86b-d4802442dcbe",
-          "quantity": 12
+          "product_id": "cb46db11-cb22-46ae-8147-4a84830ddfe9",
+          "quantity": 135
         },
         "matchingRules": {
           "$.body.product_id": {
@@ -84,7 +84,7 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "quantity": 168
+          "quantity": 185
         },
         "matchingRules": {
           "$.body.quantity": {
@@ -114,7 +114,7 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "product_id": "bfac1a1a-36a8-4614-a512-71ec3a2e9e6f"
+          "product_id": "5d387629-8d75-4628-8c43-30e41d41f1ae"
         },
         "matchingRules": {
           "$.body.product_id": {
@@ -144,8 +144,8 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "product_id": "d9537780-f9b5-435e-9f96-f7c98b4a90b1",
-          "quantity": 151
+          "product_id": "d16f7632-8a78-4b02-9b43-e8c33f7cb1c5",
+          "quantity": 155
         },
         "matchingRules": {
           "$.body.product_id": {
