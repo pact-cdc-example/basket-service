@@ -29,9 +29,9 @@ jobs:
               BRANCH_NAME="${GITHUB_REF##*/}"
             fi
           
-            if [[ "${BRANCH_NAME}" == "master" ]]; then
+            if ${BRANCH_NAME}" == "master"; then
               ENV_NAME="production"
-            elif [[ "${BRANCH_NAME}" == "dev" ]]; then
+            else
               ENV_NAME="test"
             fi
             echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
