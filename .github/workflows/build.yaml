@@ -10,9 +10,7 @@ jobs:
     env:
       GH_ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+        - uses: actions/checkout@v2
 
         - name: Docker Help
           run: docker --help
