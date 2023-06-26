@@ -15,12 +15,30 @@ jobs:
       CONSUMER_VERSION: ${{ github.sha }}
       BROKER_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
       BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
-      PACT_ENV: ""
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Choose Pact Environment
-        run: echo $GITHUB_REF_NAME
+      - name: Get branch name and save to env
+        env:
+          IS_PR: ${{ github.EVENT_NAME == 'pull_request' }}
+        run: |
+            if ${IS_PR}; then
+              BRANCH_NAME="${GITHUB_HEAD_REF}"
+            else
+              BRANCH_NAME="${GITHUB_REF##*/}"
+            fi
+          
+            if [[ "${BRANCH_NAME}" == "master" ]]; then
+              ENV_NAME="production"
+            elif [[ "${BRANCH_NAME}" == "dev" ]]; then
+              ENV_NAME="test"
+            fi
+            echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+            echo "ENV_NAME=${ENV_NAME}" >> $GITHUB_ENV
+
+      - name: Branch name and environment
+        run: echo ${{ env.BRANCH_NAME }} && echo ${{ env.ENV_NAME }}
 #
 #      - name: Set up Go
 #        uses: actions/setup-go@v2
