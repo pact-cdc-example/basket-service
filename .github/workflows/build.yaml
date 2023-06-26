@@ -10,22 +10,21 @@ jobs:
     env:
       GH_ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-        - name: Docker Help
-          run: docker --help
+      - name: Docker Help
+        run: docker --help
 
-        - name: Set up Go
-          uses: actions/setup-go@v2
-          with:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
             go-version: 1.18
 
-        - name: Build
-          run: go build
+      - name: Build
+        run: go build -v ./...
 
-        - name: Test Consumer
-          run: go clean -testcache && go test -tags=consumer ./app/...
-#        - run: git config --global user.email "
-#      - name: Build
-#        run: go build -v ./...
-#
+      - name: Gem Check
+        run: gem --help
+
+      - name: Test Consumer
+        run: go clean -testcache && go test -tags=consumer ./app/...
