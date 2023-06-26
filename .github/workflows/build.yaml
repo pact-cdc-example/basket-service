@@ -28,10 +28,17 @@ jobs:
             else
               BRANCH_NAME="${GITHUB_REF##*/}"
             fi
+            
+            PACT_ENV="test"
+            if [[ "${BRANCH_NAME}" == "master" ]]; then
+              PACT_ENV="production"
+            fi
+          
             echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+            echo "PACT_ENV=${PACT_ENV}" >> $GITHUB_ENV
 
-      - name: Branch name and environment
-        run: echo ${{ env.BRANCH_NAME }}
+      - name: Branch name and pact environment
+        run: echo ${{ env.BRANCH_NAME }} && echo ${{ env.PACT_ENV }}
 #
 #      - name: Set up Go
 #        uses: actions/setup-go@v2
