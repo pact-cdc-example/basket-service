@@ -9,25 +9,33 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+      PACTICIPANT: ${{ secrets.PACTICIPANT_NAME }}
+      CONSUMER_VERSION: ${{ github.sha }}
+      BROKER_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
+      BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+      PACT_ENV: ""
     steps:
       - uses: actions/checkout@v2
 
-      - name: Docker Help
-        run: docker --help
-
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-            go-version: 1.18
-
-      - name: Build
-        run: go build -v ./...
-
-      - name: Pact Install
-        run: sudo gem install pact && sudo gem install pact_broker-client
-
-      - name: Test Consumer
-        run: go clean -testcache && go test -tags=consumer ./app/... -v
-
-      - name: Pact Publish
-        run: pact-broker publish ./app/pacts --consumer-app-version=${{ github.sha }} --broker-base-url=${{ secrets.PACT_BROKER_BASE_URL }} --broker-token=${{ secrets.PACT_BROKER_TOKEN }}
+      - name: Choose Pact Environment
+        run: echo $GITHUB_REF_NAME
+#
+#      - name: Set up Go
+#        uses: actions/setup-go@v2
+#        with:
+#            go-version: 1.18
+#
+#      - name: Build
+#        run: go build -v ./...
+#
+#      - name: Pact Install
+#        run: sudo gem install pact && sudo gem install pact_broker-client
+#
+#      - name: Test Consumer
+#        run: go clean -testcache && go test -tags=consumer ./app/... -v
+#
+#      - name: Pact Publish
+#        run: pact-broker publish ./app/pacts --consumer-app-version=$CONSUMER_VERSION --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN
+#
+#      - name: Can I Deploy?
+#        run: pact-broker can-i-deploy --pacticipant=$PACTICIPANT --version $CONSUMER_VERSION --to={} --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN -retry-while-unknown=12 --retry-interval=10 --limit 500
