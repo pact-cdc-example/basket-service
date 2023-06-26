@@ -30,7 +30,7 @@ jobs:
             fi
             
             PACT_ENV="test"
-            if [[ "${BRANCH_NAME}" == "master" ]]; then
+            if [[ "${BRANCH_NAME}" == "development" ]] || [[ "${BRANCH_NAME}" == "master" ]]; then
               PACT_ENV="production"
             fi
           
