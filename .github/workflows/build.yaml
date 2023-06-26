@@ -38,25 +38,22 @@ jobs:
             echo "PACT_ENV=${PACT_ENV}" >> $GITHUB_ENV
 
 
-      - name: Branch name and pact environment
-        run: echo ${{ env.BRANCH_NAME }} && echo ${{ env.PACT_ENV }}
-#
-#      - name: Set up Go
-#        uses: actions/setup-go@v2
-#        with:
-#            go-version: 1.18
-#
-#      - name: Build
-#        run: go build -v ./...
-#
-#      - name: Pact Install
-#        run: sudo gem install pact && sudo gem install pact_broker-client
-#
-#      - name: Test Consumer
-#        run: go clean -testcache && go test -tags=consumer ./app/... -v
-#
-#      - name: Pact Publish
-#        run: pact-broker publish ./app/pacts --consumer-app-version=$CONSUMER_VERSION --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN
-#
-#      - name: Can I Deploy?
-#        run: pact-broker can-i-deploy --pacticipant=$PACTICIPANT --version $CONSUMER_VERSION --to={} --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN -retry-while-unknown=12 --retry-interval=10 --limit 500
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+            go-version: 1.18
+
+      - name: Build
+        run: go build -v ./...
+
+      - name: Pact Install
+        run: sudo gem install pact && sudo gem install pact_broker-client
+
+      - name: Test Consumer
+        run: go clean -testcache && go test -tags=consumer ./app/... -v
+
+      - name: Pact Publish
+        run: pact-broker publish ./app/pacts --consumer-app-version=$CONSUMER_VERSION --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN
+
+      - name: Can I Deploy?
+        run: pact-broker can-i-deploy --pacticipant=$PACTICIPANT --version $CONSUMER_VERSION --to=${{ env.PACT_ENV }} --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN -retry-while-unknown=12 --retry-interval=10 --limit 500
