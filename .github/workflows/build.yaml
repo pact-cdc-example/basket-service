@@ -23,8 +23,8 @@ jobs:
       - name: Build
         run: go build -v ./...
 
-      - name: Gem Check
-        run: gem --help
+      - name: Pact Install
+        run: gem install pact
 
       - name: Test Consumer
         run: go clean -testcache && go test -tags=consumer ./app/...
