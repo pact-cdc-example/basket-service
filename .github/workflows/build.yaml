@@ -24,7 +24,7 @@ jobs:
         run: go build -v ./...
 
       - name: Pact Install
-        run: sudo gem install pact
+        run: sudo gem install pact && sudo gem install pact-broker
 
       - name: Test Consumer
         run: go clean -testcache && go test -tags=consumer ./app/... -v
