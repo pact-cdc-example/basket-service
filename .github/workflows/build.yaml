@@ -30,7 +30,4 @@ jobs:
         run: go clean -testcache && go test -tags=consumer ./app/... -v
 
       - name: Pact Publish
-        run: pact-broker publish ./app/pacts \
-          --consumer-app-version=${{ github.sha }} \
-          --broker-base-url=${{ secrets.PACT_BROKER_BASE_URL }} \
-          --broker-token=${{ secrets.PACT_BROKER_TOKEN }}
+        run: pact-broker publish ./app/pacts --consumer-app-version=${{ github.sha }} --broker-base-url=${{ secrets.PACT_BROKER_BASE_URL }} --broker-token=${{ secrets.PACT_BROKER_TOKEN }}
