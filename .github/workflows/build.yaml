@@ -37,6 +37,7 @@ jobs:
             echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
             echo "PACT_ENV=${PACT_ENV}" >> $GITHUB_ENV
 
+
       - name: Branch name and pact environment
         run: echo ${{ env.BRANCH_NAME }} && echo ${{ env.PACT_ENV }}
 #
