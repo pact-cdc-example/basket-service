@@ -11,7 +11,7 @@
       "providerState": "i get product not found error when the product with given id does not exists",
       "request": {
         "method": "GET",
-        "path": "/api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b"
+        "path": "/api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da"
       },
       "response": {
         "status": 400,
@@ -29,7 +29,7 @@
       "providerState": "i get product with given id",
       "request": {
         "method": "GET",
-        "path": "/api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee"
+        "path": "/api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3"
       },
       "response": {
         "status": 200,
@@ -37,15 +37,15 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "code": "autem",
-          "color": "PaleGreen",
-          "created_at": "2018-12-10T13:34:04.738853725Z",
-          "id": "2555bc04-7a49-44f0-9106-93c5099f12ee",
+          "code": "reiciendis",
+          "color": "DarkSeaGreen",
+          "created_at": "2016-08-16T09:29:53.750529372Z",
+          "id": "ba1aa568-26a2-41f3-ad5d-9616574738f3",
           "image_url": "https://picsum.photos/200/100",
-          "name": "Hipolito Predovic",
-          "price": 94.59,
-          "type": "eligendi",
-          "updated_at": "1906-03-05T03:58:15.934611693Z"
+          "name": "Garrett Boyle",
+          "price": 75.04,
+          "type": "vel",
+          "updated_at": "1937-04-24T02:36:53.695605437Z"
         },
         "matchingRules": {
           "$.body.code": {
@@ -112,7 +112,7 @@
         },
         "body": {
           "ids": [
-            "90fd06e4-8e39-4219-857f-d463c6ba8795"
+            "2e6e176a-b94e-4946-b716-0279793f83bb"
           ]
         },
         "matchingRules": {

@@ -276,6 +276,7 @@ func (s *StockConsumerTestSuite) initPact() {
 		DisableToolValidityCheck: true,
 		PactFileWriteMode:        "overwrite",
 		LogDir:                   "./pacts/logs",
+		PactDir:                  ".././pacts",
 	}
 	//it must be used otherwise it could not create pact file
 	s.pact.Setup(true)

@@ -1,5 +1,5 @@
-I, [2023-06-26T20:06:38.213006 #8713]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.213096 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.692236 #10700]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.692357 #10700] DEBUG -- : {
   "description": "A request for inquiry stock information about a product",
   "providerState": "i get false",
   "request": {
@@ -12,11 +12,11 @@ D, [2023-06-26T20:06:38.213096 #8713] DEBUG -- : {
     "body": {
       "product_id": {
         "json_class": "Pact::SomethingLike",
-        "contents": "4550d706-1c7b-461f-9d02-d580352e3048"
+        "contents": "314fa602-fd66-41ca-9b25-69cbf87a933c"
       },
       "quantity": {
         "json_class": "Pact::SomethingLike",
-        "contents": 107
+        "contents": 91
       }
     }
   },
@@ -31,27 +31,27 @@ D, [2023-06-26T20:06:38.213096 #8713] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.213997 #8713]  INFO -- : Received request POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.214048 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.693282 #10700]  INFO -- : Received request POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.693337 #10700] DEBUG -- : {
   "path": "/api/v1/stocks/availability",
   "query": "",
   "method": "post",
   "body": {
-    "product_id": "4550d706-1c7b-461f-9d02-d580352e3048",
-    "quantity": 107
+    "product_id": "314fa602-fd66-41ca-9b25-69cbf87a933c",
+    "quantity": 91
   },
   "headers": {
-    "Content-Length": "68",
+    "Content-Length": "67",
     "Content-Type": "application/json",
-    "Host": "localhost:65411",
+    "Host": "localhost:49420",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.214126 #8713]  INFO -- : Found matching response for POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.214148 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.693448 #10700]  INFO -- : Found matching response for POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.693478 #10700] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json"
@@ -60,10 +60,10 @@ D, [2023-06-26T20:06:38.214148 #8713] DEBUG -- : {
     "is_available": false
   }
 }
-I, [2023-06-26T20:06:38.214521 #8713]  INFO -- : Verifying - interactions matched
-I, [2023-06-26T20:06:38.214848 #8713]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.215824 #8713]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.216295 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.693814 #10700]  INFO -- : Verifying - interactions matched
+I, [2023-06-26T20:27:29.694112 #10700]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.695054 #10700]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.695104 #10700] DEBUG -- : {
   "description": "A request for inquiry stock information about a product",
   "providerState": "i get no stock information found error if no stock information found for given product id",
   "request": {
@@ -76,11 +76,11 @@ D, [2023-06-26T20:06:38.216295 #8713] DEBUG -- : {
     "body": {
       "product_id": {
         "json_class": "Pact::SomethingLike",
-        "contents": "cb46db11-cb22-46ae-8147-4a84830ddfe9"
+        "contents": "f4019711-1f75-489d-8eeb-a6757c4cdd14"
       },
       "quantity": {
         "json_class": "Pact::SomethingLike",
-        "contents": 135
+        "contents": 234
       }
     }
   },
@@ -96,27 +96,27 @@ D, [2023-06-26T20:06:38.216295 #8713] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.217199 #8713]  INFO -- : Received request POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.217652 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.695449 #10700]  INFO -- : Received request POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.695508 #10700] DEBUG -- : {
   "path": "/api/v1/stocks/availability",
   "query": "",
   "method": "post",
   "body": {
-    "product_id": "cb46db11-cb22-46ae-8147-4a84830ddfe9",
-    "quantity": 135
+    "product_id": "f4019711-1f75-489d-8eeb-a6757c4cdd14",
+    "quantity": 234
   },
   "headers": {
     "Content-Length": "68",
     "Content-Type": "application/json",
-    "Host": "localhost:65411",
+    "Host": "localhost:49420",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.217715 #8713]  INFO -- : Found matching response for POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.217737 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.695574 #10700]  INFO -- : Found matching response for POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.695602 #10700] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -126,9 +126,9 @@ D, [2023-06-26T20:06:38.217737 #8713] DEBUG -- : {
     "message": "No stock information found for given product id."
   }
 }
-I, [2023-06-26T20:06:38.218481 #8713]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.219851 #8713]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.219898 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.695890 #10700]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.696994 #10700]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.697047 #10700] DEBUG -- : {
   "description": "A request for inquiry stock information about a product",
   "providerState": "i get product id must be given error if product id is not given",
   "request": {
@@ -141,7 +141,7 @@ D, [2023-06-26T20:06:38.219898 #8713] DEBUG -- : {
     "body": {
       "quantity": {
         "json_class": "Pact::SomethingLike",
-        "contents": 185
+        "contents": 80
       }
     }
   },
@@ -157,26 +157,26 @@ D, [2023-06-26T20:06:38.219898 #8713] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.221232 #8713]  INFO -- : Received request POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.222200 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.697423 #10700]  INFO -- : Received request POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.697478 #10700] DEBUG -- : {
   "path": "/api/v1/stocks/availability",
   "query": "",
   "method": "post",
   "body": {
-    "quantity": 185
+    "quantity": 80
   },
   "headers": {
-    "Content-Length": "16",
+    "Content-Length": "15",
     "Content-Type": "application/json",
-    "Host": "localhost:65411",
+    "Host": "localhost:49420",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.222632 #8713]  INFO -- : Found matching response for POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.222654 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.697547 #10700]  INFO -- : Found matching response for POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.697571 #10700] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -186,9 +186,9 @@ D, [2023-06-26T20:06:38.222654 #8713] DEBUG -- : {
     "message": "Product id must be given to stock inquiry."
   }
 }
-I, [2023-06-26T20:06:38.223430 #8713]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.224686 #8713]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.229116 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.697824 #10700]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.700096 #10700]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.700159 #10700] DEBUG -- : {
   "description": "A request for inquiry stock information about a product",
   "providerState": "i get quantity must be given error if quantity is not given",
   "request": {
@@ -201,7 +201,7 @@ D, [2023-06-26T20:06:38.229116 #8713] DEBUG -- : {
     "body": {
       "product_id": {
         "json_class": "Pact::SomethingLike",
-        "contents": "5d387629-8d75-4628-8c43-30e41d41f1ae"
+        "contents": "afb7ed39-306a-4d7f-bd16-36e3655b2a85"
       }
     }
   },
@@ -217,26 +217,26 @@ D, [2023-06-26T20:06:38.229116 #8713] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.230133 #8713]  INFO -- : Received request POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.230258 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.700564 #10700]  INFO -- : Received request POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.700606 #10700] DEBUG -- : {
   "path": "/api/v1/stocks/availability",
   "query": "",
   "method": "post",
   "body": {
-    "product_id": "5d387629-8d75-4628-8c43-30e41d41f1ae"
+    "product_id": "afb7ed39-306a-4d7f-bd16-36e3655b2a85"
   },
   "headers": {
     "Content-Length": "53",
     "Content-Type": "application/json",
-    "Host": "localhost:65411",
+    "Host": "localhost:49420",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.230322 #8713]  INFO -- : Found matching response for POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.230348 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.700674 #10700]  INFO -- : Found matching response for POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.700696 #10700] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -246,9 +246,9 @@ D, [2023-06-26T20:06:38.230348 #8713] DEBUG -- : {
     "message": "Quantity must be given to stock inquiry."
   }
 }
-I, [2023-06-26T20:06:38.230606 #8713]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.231572 #8713]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.235243 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.700954 #10700]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.701899 #10700]  INFO -- : Registered expected interaction POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.701945 #10700] DEBUG -- : {
   "description": "A request for inquiry stock information about a product",
   "providerState": "i get true",
   "request": {
@@ -261,11 +261,11 @@ D, [2023-06-26T20:06:38.235243 #8713] DEBUG -- : {
     "body": {
       "product_id": {
         "json_class": "Pact::SomethingLike",
-        "contents": "d16f7632-8a78-4b02-9b43-e8c33f7cb1c5"
+        "contents": "43a4bd97-39f8-4387-bcb9-1abd42623d18"
       },
       "quantity": {
         "json_class": "Pact::SomethingLike",
-        "contents": 155
+        "contents": 64
       }
     }
   },
@@ -280,27 +280,27 @@ D, [2023-06-26T20:06:38.235243 #8713] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.235664 #8713]  INFO -- : Received request POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.235719 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.702556 #10700]  INFO -- : Received request POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.702629 #10700] DEBUG -- : {
   "path": "/api/v1/stocks/availability",
   "query": "",
   "method": "post",
   "body": {
-    "product_id": "d16f7632-8a78-4b02-9b43-e8c33f7cb1c5",
-    "quantity": 155
+    "product_id": "43a4bd97-39f8-4387-bcb9-1abd42623d18",
+    "quantity": 64
   },
   "headers": {
-    "Content-Length": "68",
+    "Content-Length": "67",
     "Content-Type": "application/json",
-    "Host": "localhost:65411",
+    "Host": "localhost:49420",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.235787 #8713]  INFO -- : Found matching response for POST /api/v1/stocks/availability
-D, [2023-06-26T20:06:38.239773 #8713] DEBUG -- : {
+I, [2023-06-26T20:27:29.702704 #10700]  INFO -- : Found matching response for POST /api/v1/stocks/availability
+D, [2023-06-26T20:27:29.702726 #10700] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json"
@@ -309,5 +309,5 @@ D, [2023-06-26T20:06:38.239773 #8713] DEBUG -- : {
     "is_available": true
   }
 }
-I, [2023-06-26T20:06:38.240054 #8713]  INFO -- : Verifying - interactions matched
-I, [2023-06-26T20:06:38.240807 #8713]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.703014 #10700]  INFO -- : Verifying - interactions matched
+I, [2023-06-26T20:27:29.703301 #10700]  INFO -- : Cleared interactions

@@ -1,10 +1,10 @@
-I, [2023-06-26T20:06:38.109999 #8708]  INFO -- : Registered expected interaction GET /api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b
-D, [2023-06-26T20:06:38.110078 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.517788 #10695]  INFO -- : Registered expected interaction GET /api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da
+D, [2023-06-26T20:27:29.517890 #10695] DEBUG -- : {
   "description": "A request for product with a non exist product id",
   "providerState": "i get product not found error when the product with given id does not exists",
   "request": {
     "method": "GET",
-    "path": "/api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b"
+    "path": "/api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da"
   },
   "response": {
     "status": 400,
@@ -18,22 +18,22 @@ D, [2023-06-26T20:06:38.110078 #8708] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.110944 #8708]  INFO -- : Received request GET /api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b
-D, [2023-06-26T20:06:38.110990 #8708] DEBUG -- : {
-  "path": "/api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b",
+I, [2023-06-26T20:27:29.518851 #10695]  INFO -- : Received request GET /api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da
+D, [2023-06-26T20:27:29.518904 #10695] DEBUG -- : {
+  "path": "/api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da",
   "query": "",
   "method": "get",
   "headers": {
     "Content-Type": "application/json",
-    "Host": "localhost:65406",
+    "Host": "localhost:49416",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.111055 #8708]  INFO -- : Found matching response for GET /api/v1/products/694b91aa-281c-41f8-95da-2d65e976549b
-D, [2023-06-26T20:06:38.111077 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.518966 #10695]  INFO -- : Found matching response for GET /api/v1/products/2a29f25c-ec7a-43d2-aeed-7b87e4a8b2da
+D, [2023-06-26T20:27:29.518990 #10695] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -43,14 +43,14 @@ D, [2023-06-26T20:06:38.111077 #8708] DEBUG -- : {
     "message": "Product not found."
   }
 }
-I, [2023-06-26T20:06:38.111400 #8708]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.112531 #8708]  INFO -- : Registered expected interaction GET /api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee
-D, [2023-06-26T20:06:38.112593 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.519341 #10695]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.520391 #10695]  INFO -- : Registered expected interaction GET /api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3
+D, [2023-06-26T20:27:29.520455 #10695] DEBUG -- : {
   "description": "A request for product with a exist product id",
   "providerState": "i get product with given id",
   "request": {
     "method": "GET",
-    "path": "/api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee"
+    "path": "/api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3"
   },
   "response": {
     "status": 200,
@@ -60,19 +60,19 @@ D, [2023-06-26T20:06:38.112593 #8708] DEBUG -- : {
     "body": {
       "code": {
         "json_class": "Pact::SomethingLike",
-        "contents": "autem"
+        "contents": "reiciendis"
       },
       "color": {
         "json_class": "Pact::SomethingLike",
-        "contents": "PaleGreen"
+        "contents": "DarkSeaGreen"
       },
       "created_at": {
         "json_class": "Pact::SomethingLike",
-        "contents": "2018-12-10T13:34:04.738853725Z"
+        "contents": "2016-08-16T09:29:53.750529372Z"
       },
       "id": {
         "json_class": "Pact::SomethingLike",
-        "contents": "2555bc04-7a49-44f0-9106-93c5099f12ee"
+        "contents": "ba1aa568-26a2-41f3-ad5d-9616574738f3"
       },
       "image_url": {
         "json_class": "Pact::SomethingLike",
@@ -80,40 +80,40 @@ D, [2023-06-26T20:06:38.112593 #8708] DEBUG -- : {
       },
       "name": {
         "json_class": "Pact::SomethingLike",
-        "contents": "Hipolito Predovic"
+        "contents": "Garrett Boyle"
       },
       "price": {
         "json_class": "Pact::SomethingLike",
-        "contents": 94.59
+        "contents": 75.04
       },
       "type": {
         "json_class": "Pact::SomethingLike",
-        "contents": "eligendi"
+        "contents": "vel"
       },
       "updated_at": {
         "json_class": "Pact::SomethingLike",
-        "contents": "1906-03-05T03:58:15.934611693Z"
+        "contents": "1937-04-24T02:36:53.695605437Z"
       }
     }
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.113317 #8708]  INFO -- : Received request GET /api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee
-D, [2023-06-26T20:06:38.113359 #8708] DEBUG -- : {
-  "path": "/api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee",
+I, [2023-06-26T20:27:29.521171 #10695]  INFO -- : Received request GET /api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3
+D, [2023-06-26T20:27:29.521218 #10695] DEBUG -- : {
+  "path": "/api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3",
   "query": "",
   "method": "get",
   "headers": {
     "Content-Type": "application/json",
-    "Host": "localhost:65406",
+    "Host": "localhost:49416",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.113410 #8708]  INFO -- : Found matching response for GET /api/v1/products/2555bc04-7a49-44f0-9106-93c5099f12ee
-D, [2023-06-26T20:06:38.113943 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.521766 #10695]  INFO -- : Found matching response for GET /api/v1/products/ba1aa568-26a2-41f3-ad5d-9616574738f3
+D, [2023-06-26T20:27:29.521820 #10695] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json"
@@ -121,19 +121,19 @@ D, [2023-06-26T20:06:38.113943 #8708] DEBUG -- : {
   "body": {
     "code": {
       "json_class": "Pact::SomethingLike",
-      "contents": "autem"
+      "contents": "reiciendis"
     },
     "color": {
       "json_class": "Pact::SomethingLike",
-      "contents": "PaleGreen"
+      "contents": "DarkSeaGreen"
     },
     "created_at": {
       "json_class": "Pact::SomethingLike",
-      "contents": "2018-12-10T13:34:04.738853725Z"
+      "contents": "2016-08-16T09:29:53.750529372Z"
     },
     "id": {
       "json_class": "Pact::SomethingLike",
-      "contents": "2555bc04-7a49-44f0-9106-93c5099f12ee"
+      "contents": "ba1aa568-26a2-41f3-ad5d-9616574738f3"
     },
     "image_url": {
       "json_class": "Pact::SomethingLike",
@@ -141,26 +141,26 @@ D, [2023-06-26T20:06:38.113943 #8708] DEBUG -- : {
     },
     "name": {
       "json_class": "Pact::SomethingLike",
-      "contents": "Hipolito Predovic"
+      "contents": "Garrett Boyle"
     },
     "price": {
       "json_class": "Pact::SomethingLike",
-      "contents": 94.59
+      "contents": 75.04
     },
     "type": {
       "json_class": "Pact::SomethingLike",
-      "contents": "eligendi"
+      "contents": "vel"
     },
     "updated_at": {
       "json_class": "Pact::SomethingLike",
-      "contents": "1906-03-05T03:58:15.934611693Z"
+      "contents": "1937-04-24T02:36:53.695605437Z"
     }
   }
 }
-I, [2023-06-26T20:06:38.114672 #8708]  INFO -- : Verifying - interactions matched
-I, [2023-06-26T20:06:38.115377 #8708]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.116758 #8708]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.116804 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.522569 #10695]  INFO -- : Verifying - interactions matched
+I, [2023-06-26T20:27:29.523613 #10695]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.525420 #10695]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.525492 #10695] DEBUG -- : {
   "description": "A request for get products",
   "providerState": "i get body parser error when no product id is given",
   "request": {
@@ -183,8 +183,8 @@ D, [2023-06-26T20:06:38.116804 #8708] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.117924 #8708]  INFO -- : Received request POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.117968 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.527036 #10695]  INFO -- : Received request POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.527103 #10695] DEBUG -- : {
   "path": "/api/v1/products/bulk",
   "query": "",
   "method": "post",
@@ -194,15 +194,15 @@ D, [2023-06-26T20:06:38.117968 #8708] DEBUG -- : {
   "headers": {
     "Content-Length": "12",
     "Content-Type": "application/json",
-    "Host": "localhost:65406",
+    "Host": "localhost:49416",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.118020 #8708]  INFO -- : Found matching response for POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.118040 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.527161 #10695]  INFO -- : Found matching response for POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.527183 #10695] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -212,9 +212,9 @@ D, [2023-06-26T20:06:38.118040 #8708] DEBUG -- : {
     "message": "could not parse request body."
   }
 }
-I, [2023-06-26T20:06:38.118838 #8708]  INFO -- : Cleared interactions
-I, [2023-06-26T20:06:38.120205 #8708]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.120257 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.528367 #10695]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.530889 #10695]  INFO -- : Registered expected interaction POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.530958 #10695] DEBUG -- : {
   "description": "A request for get products contains at least one not exist product id",
   "providerState": "i get product not found error when the one of product with given id does not exists",
   "request": {
@@ -227,7 +227,7 @@ D, [2023-06-26T20:06:38.120257 #8708] DEBUG -- : {
     "body": {
       "ids": {
         "json_class": "Pact::ArrayLike",
-        "contents": "90fd06e4-8e39-4219-857f-d463c6ba8795",
+        "contents": "2e6e176a-b94e-4946-b716-0279793f83bb",
         "min": 1
       }
     }
@@ -244,30 +244,30 @@ D, [2023-06-26T20:06:38.120257 #8708] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2023-06-26T20:06:38.121826 #8708]  INFO -- : Received request POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.121885 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.533301 #10695]  INFO -- : Received request POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.533364 #10695] DEBUG -- : {
   "path": "/api/v1/products/bulk",
   "query": "",
   "method": "post",
   "body": {
     "ids": [
-      "90fd06e4-8e39-4219-857f-d463c6ba8795",
-      "decb09ec-fbbf-4aa2-8f42-beaaf098eca4",
-      "4ace1bcc-dfbc-4770-aed0-415be73a9caf"
+      "2e6e176a-b94e-4946-b716-0279793f83bb",
+      "d61aaeb7-4a8f-40cb-b581-bf1e95657f9d",
+      "37d526cb-f779-4219-9de9-37bfd835a2e6"
     ]
   },
   "headers": {
     "Content-Length": "126",
     "Content-Type": "application/json",
-    "Host": "localhost:65406",
+    "Host": "localhost:49416",
     "User-Agent": "Go-http-client/1.1",
     "Accept": "application/json",
     "Accept-Encoding": "gzip",
     "Version": "HTTP/1.1"
   }
 }
-I, [2023-06-26T20:06:38.121973 #8708]  INFO -- : Found matching response for POST /api/v1/products/bulk
-D, [2023-06-26T20:06:38.122007 #8708] DEBUG -- : {
+I, [2023-06-26T20:27:29.533516 #10695]  INFO -- : Found matching response for POST /api/v1/products/bulk
+D, [2023-06-26T20:27:29.533609 #10695] DEBUG -- : {
   "status": 400,
   "headers": {
     "Content-Type": "application/json"
@@ -277,4 +277,4 @@ D, [2023-06-26T20:06:38.122007 #8708] DEBUG -- : {
     "message": "At least one of given product ids does not exist."
   }
 }
-I, [2023-06-26T20:06:38.122347 #8708]  INFO -- : Cleared interactions
+I, [2023-06-26T20:27:29.534317 #10695]  INFO -- : Cleared interactions
