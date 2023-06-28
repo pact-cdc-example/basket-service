@@ -53,7 +53,7 @@ jobs:
         run: go clean -testcache && go test -tags=consumer ./app/... -v
 
       - name: Pact Publish
-        run: pact-broker publish ./app/pacts --consumer-app-version=$CONSUMER_VERSION --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN
+        run: pact-broker publish ./app/pacts --consumer-app-version=$CONSUMER_VERSION --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN --tag=${{ env.PACT_ENV }}
 
       - name: Can I Deploy?
         run: pact-broker can-i-deploy --pacticipant=$PACTICIPANT --version $CONSUMER_VERSION --to=${{ env.PACT_ENV }} --broker-base-url=$BROKER_URL --broker-token=$BROKER_TOKEN -retry-while-unknown=12 --retry-interval=10 --limit 500
